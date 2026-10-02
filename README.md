@@ -7,9 +7,13 @@
 | 服务 | 默认策略 | 可选策略 |
 |------|----------|----------|
 | 🧱 DNS 防泄露 | REJECT | 节点选择、DIRECT |
+| 🛑 广告拦截 | REJECT | DIRECT、节点选择 |
+| 🧩 自定义规则 | 🚀 节点选择 | PROXY、DIRECT、REJECT |
 | 📧 邮件服务 | PROXY | DIRECT、节点选择、日本节点、香港节点 |
 | 🔍 谷歌服务 | 🇺🇸 美国节点 | 🇯🇵 日本节点、🇭🇰 香港节点、节点选择、PROXY、DIRECT |
 | 🤖 AI 服务 | 🇺🇸 美国节点 | 节点选择、PROXY、DIRECT |
+| 🎬 流媒体 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
+| 💬 社交平台 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
 | 🍏 苹果服务 | DIRECT | 节点选择、PROXY |
 | 📈 券商服务 | 🇭🇰 香港节点 | DIRECT、节点选择、PROXY |
@@ -34,22 +38,26 @@
 | 优先级 | 服务 | 默认策略 |
 |--------|------|----------|
 | 1 | 🧱 DNS 防泄露（HTTPDNS） | REJECT |
-| 2 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
-| 3 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
-| 4 | 🤖 AI 服务（ChatGPT、Claude 等） | 美国节点 |
-| 5 | 📹 油管视频（含 YouTube 翻译 API） | 节点选择 |
-| 6 | 🔒 哔哩哔哩 | DIRECT |
-| 7 | 🏠 私有网络 / 局域网 | DIRECT |
-| 8 | 📲 电报消息 | 节点选择 |
-| 9 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
-| 10 | Ⓜ️ 微软服务 | 节点选择 |
-| 13 | 📈 券商服务（富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透） | 香港节点 |
-| 14 | 🍎 苹果推送 | 节点选择 |
-| 15 | 🍏 苹果服务 | DIRECT |
-| 16 | 🔒 国内服务 | DIRECT |
-| 17 | 🌍 非中国（境外流量） | PROXY |
-| 18 | GEOIP CN | DIRECT |
-| 19 | 🐟 漏网之鱼（兜底） | PROXY |
+| 2 | 🧩 自定义规则（`Custom.list`） | 节点选择 |
+| 3 | 🛑 广告拦截（AdvertisingLite） | REJECT |
+| 4 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
+| 5 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
+| 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | 美国节点 |
+| 7 | 📹 油管视频（含 YouTube 翻译 API） | 节点选择 |
+| 8 | 🔒 哔哩哔哩 | DIRECT |
+| 9 | 🏠 私有网络 / 局域网 | DIRECT |
+| 10 | 📲 电报消息 | 节点选择 |
+| 11 | 🎬 流媒体（Netflix、Disney+、HBO、Hulu、Prime Video、Spotify 等） | 节点选择 |
+| 12 | 💬 社交平台（X、Facebook、Instagram、Discord、Reddit、TikTok 等） | 节点选择 |
+| 13 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
+| 14 | Ⓜ️ 微软服务 | 节点选择 |
+| 15 | 📈 券商服务（富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透） | 香港节点 |
+| 16 | 🍎 苹果推送 | 节点选择 |
+| 17 | 🍏 苹果服务 | DIRECT |
+| 18 | 🔒 国内服务 | DIRECT |
+| 19 | 🌍 非中国（境外流量） | PROXY |
+| 20 | GEOIP CN | DIRECT |
+| 21 | 🐟 漏网之鱼（兜底） | PROXY |
 
 ## 规则集来源
 
@@ -129,3 +137,6 @@ MIT
 - 国内常见域名用阿里 DoH 解析（`[Host]`）
 - 每周自动同步上游（`.github/workflows/sync-upstream.yml`），以 PR 形式合并
 - 删除 `[URL Rewrite]` 与 `[MITM]`（google.cn 跳转及对应的 HTTPS 解密），不再使用 MITM
+- 清理被广告规则抢先拦截的冗余条目（`Google.list`、`AI.list`、`HK_Broker.list`）
+- `AI.list` 补充 Hugging Face、Cursor、Mistral、Character.AI、Poe、Midjourney、ElevenLabs、Suno
+- 新增策略组 `🎬 流媒体`、`💬 社交平台`，规则来自 blackmatrix7 各服务规则集

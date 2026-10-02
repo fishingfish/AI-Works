@@ -49,8 +49,6 @@ DOMAIN-SUFFIX,moomooequity.com
 DOMAIN-SUFFIX,moomootrustee.com
 
 # Futu / Moomoo - attribution and push related endpoints
-DOMAIN-SUFFIX,9oju31.launches.appsflyersdk.com
-DOMAIN-SUFFIX,sgqt0j.launches.appsflyersdk.com
 DOMAIN,cg.play-analytics.com
 
 # Futu / Moomoo - exact API, quote, trading, support, and download endpoints
