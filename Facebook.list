@@ -1,0 +1,26 @@
+# NAME: Facebook
+# AUTHOR: fishingfish
+# DESC: Meta 系精简版（核心域名 + 自治系统 AS32934），替代 blackmatrix7 的 570 条版本（其中大量为仿冒/无关域名）。
+#       条目为手工整理，核对时参考了 blackmatrix7/ios_rule_script 的 Facebook 规则。
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,thefacebook.com
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fburl.com
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,instagr.am
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,internet.org
+DOMAIN-KEYWORD,fbcdn
+IP-ASN,32934,no-resolve

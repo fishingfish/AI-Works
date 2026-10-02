@@ -140,3 +140,4 @@ MIT
 - 清理被广告规则抢先拦截的冗余条目（`Google.list`、`AI.list`、`HK_Broker.list`）
 - `AI.list` 补充 Hugging Face、Cursor、Mistral、Character.AI、Poe、Midjourney、ElevenLabs、Suno
 - 新增策略组 `🎬 流媒体`、`💬 社交平台`，规则来自 blackmatrix7 各服务规则集
+- `Netflix.list`、`Facebook.list` 改为本仓库的精简版（域名 + IP-ASN），不再加载上游约 1100 / 570 条规则；这两份不随上游自动更新，条目参考 blackmatrix7/ios_rule_script 手工整理

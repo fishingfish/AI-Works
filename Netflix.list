@@ -1,0 +1,22 @@
+# NAME: Netflix
+# AUTHOR: fishingfish
+# DESC: Netflix 精简版（域名 + 自治系统 AS2906），替代 blackmatrix7 的 1100+ 条 IP-CIDR 版本。
+#       条目为手工整理，核对时参考了 blackmatrix7/ios_rule_script 的 Netflix 规则。
+DOMAIN-SUFFIX,netflix.com
+DOMAIN-SUFFIX,netflix.net
+DOMAIN-SUFFIX,netflix.ca
+DOMAIN-SUFFIX,netflix.com.au
+DOMAIN-SUFFIX,netflixstudios.com
+DOMAIN-SUFFIX,netflixinvestor.com
+DOMAIN-SUFFIX,netflixtechblog.com
+DOMAIN-SUFFIX,fast.com
+DOMAIN-SUFFIX,nflxvideo.net
+DOMAIN-SUFFIX,nflximg.net
+DOMAIN-SUFFIX,nflximg.com
+DOMAIN-SUFFIX,nflxext.com
+DOMAIN-SUFFIX,nflxso.net
+DOMAIN-SUFFIX,nflxsearch.net
+DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
+DOMAIN-KEYWORD,dualstack.apiproxy-
+DOMAIN-KEYWORD,dualstack.ichnaea-web-
+IP-ASN,2906,no-resolve
