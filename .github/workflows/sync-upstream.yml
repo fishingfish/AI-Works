@@ -1,0 +1,42 @@
+name: Sync upstream
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # 每周一 UTC 03:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Merge upstream
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote add upstream https://github.com/LingJingMaster/Shadowrocket-Rules.git
+          git fetch upstream main
+          if git merge-base --is-ancestor upstream/main HEAD; then
+            echo "Already up to date"; exit 0
+          fi
+          BR="sync/upstream-$(date +%Y%m%d)"
+          git checkout -b "$BR"
+          if git merge upstream/main -m "Sync upstream LingJingMaster/Shadowrocket-Rules"; then
+            BODY="上游更新已自动合并，无冲突。检查后合并即可。"
+          else
+            git checkout --theirs . 2>/dev/null || true
+            git add -A
+            git commit -m "Sync upstream (conflicts — resolve before merging)" 
+            BODY="⚠️ 与你的个性化修改存在冲突，已先采用上游内容，请对照 diff 恢复你的自定义（尤其 Shadowrocket.conf 的仓库链接与去广告规则）后再合并。"
+          fi
+          git push origin "$BR"
+          gh pr create --base "${{ github.event.repository.default_branch }}" --head "$BR" \
+            --title "Sync upstream $(date +%F)" --body "$BODY"
