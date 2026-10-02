@@ -30,7 +30,7 @@
 
 或者扫描二维码
 
-<img width="200" height="200" alt="ctool-2026-02-26-17-13-16" src="https://github.com/user-attachments/assets/22f1b4f7-3265-493c-9e5a-2b662924ed2f" />
+<img width="200" height="200" alt="订阅二维码" src="qrcode.png" />
 
 ## 分流规则
 
@@ -135,3 +135,4 @@ MIT
 - 新增策略组 `🎬 流媒体`、`💬 社交平台`，规则来自 blackmatrix7 各服务规则集
 - `Netflix.list`、`Facebook.list` 改为本仓库的精简版（域名 + IP-ASN），不再加载上游约 1100 / 570 条规则；这两份不随上游自动更新，条目参考 blackmatrix7/ios_rule_script 手工整理
 - 删除券商服务相关规则（`HK_Broker.list` 与 `📈 券商服务` 策略组）
+- 二维码换成本仓库的订阅地址（`qrcode.png`）
