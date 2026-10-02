@@ -22,7 +22,7 @@
 ## 快速开始
 
 1. 复制配置文件的 Raw 链接：
-   `https://raw.githubusercontent.com/fishingfish/AI-Works/refs/heads/main/Shadowrocket.conf`
+   `https://raw.githubusercontent.com/fishingfish/AI-Works/refs/heads/main/Shadowrocket_fish.conf`
 2. 打开 Shadowrocket → 配置 → 右上角 `+` → 粘贴链接 → 下载
 3. 点击已下载的配置，设为使用中（✔️）
 4. 首页添加你自己的节点或订阅
@@ -136,3 +136,4 @@ MIT
 - `Netflix.list`、`Facebook.list` 改为本仓库的精简版（域名 + IP-ASN），不再加载上游约 1100 / 570 条规则；这两份不随上游自动更新，条目参考 blackmatrix7/ios_rule_script 手工整理
 - 删除券商服务相关规则（`HK_Broker.list` 与 `📈 券商服务` 策略组）
 - 二维码换成本仓库的订阅地址（`qrcode.png`）
+- 配置文件改名为 `Shadowrocket_fish.conf`，订阅地址与二维码同步更新
