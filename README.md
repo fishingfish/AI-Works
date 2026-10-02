@@ -16,7 +16,6 @@
 | 💬 社交平台 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
 | 🍏 苹果服务 | DIRECT | 节点选择、PROXY |
-| 📈 券商服务 | 🇭🇰 香港节点 | DIRECT、节点选择、PROXY |
 | 🌍 非中国 | PROXY | 节点选择、DIRECT、日本节点 |
 | 🐟 漏网之鱼 | PROXY | 节点选择、DIRECT、日本节点 |
 
@@ -51,13 +50,12 @@
 | 12 | 💬 社交平台（X、Facebook、Instagram、Discord、Reddit、TikTok 等） | 节点选择 |
 | 13 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
 | 14 | Ⓜ️ 微软服务 | 节点选择 |
-| 15 | 📈 券商服务（富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透） | 香港节点 |
-| 16 | 🍎 苹果推送 | 节点选择 |
-| 17 | 🍏 苹果服务 | DIRECT |
-| 18 | 🔒 国内服务 | DIRECT |
-| 19 | 🌍 非中国（境外流量） | PROXY |
-| 20 | GEOIP CN | DIRECT |
-| 21 | 🐟 漏网之鱼（兜底） | PROXY |
+| 15 | 🍎 苹果推送 | 节点选择 |
+| 16 | 🍏 苹果服务 | DIRECT |
+| 17 | 🔒 国内服务 | DIRECT |
+| 18 | 🌍 非中国（境外流量） | PROXY |
+| 19 | GEOIP CN | DIRECT |
+| 20 | 🐟 漏网之鱼（兜底） | PROXY |
 
 ## 规则集来源
 
@@ -66,7 +64,6 @@
 - [iab0x00/ProxyRules](https://github.com/iab0x00/ProxyRules) — AI 服务补充规则
 - `Mail.list` 收录 Apple、Gmail、Outlook、Yahoo、Yandex 的邮件协议端点
 - `Apple.list` 基于 blackmatrix7 Apple 规则，并配套加载 `Apple_Domain.list`，补充 iCloud Photos / Apple CDN 直连域名
-- `HK_Broker.list` 补充富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透 / TradeUP / Schwab 证券域名及交易 IP 段
 
 ## 当前重点
 
@@ -79,9 +76,6 @@
 - 新增 `Mail.list`
    - 精确收录常见 IMAP、POP3 与 SMTP 服务端点
    - 默认使用 PROXY，可手动切换 DIRECT 或地区节点
-- 新增 `HK_Broker.list`
-   - 补充富途 / moomoo / 长桥券商域名
-   - 合并老虎证券域名，不再依赖外部券商规则
    - 补充富途交易相关域名：`futuapi.com`、`futuin.com`、`futuhk1.com`、`futuhongkong.com`、`qtlcdn.com`
    - 补充长桥交易相关域名：`lbkrs.com`、`longbridge.app`、`longportapp.com`
    - 合并 Arthur-vx Broker 规则中的精确 API / 交易域名、IP 段、TradeUP 和 Schwab 域名
@@ -137,7 +131,7 @@ MIT
 - 国内常见域名用阿里 DoH 解析（`[Host]`）
 - 每周自动同步上游（`.github/workflows/sync-upstream.yml`），以 PR 形式合并
 - 删除 `[URL Rewrite]` 与 `[MITM]`（google.cn 跳转及对应的 HTTPS 解密），不再使用 MITM
-- 清理被广告规则抢先拦截的冗余条目（`Google.list`、`AI.list`、`HK_Broker.list`）
 - `AI.list` 补充 Hugging Face、Cursor、Mistral、Character.AI、Poe、Midjourney、ElevenLabs、Suno
 - 新增策略组 `🎬 流媒体`、`💬 社交平台`，规则来自 blackmatrix7 各服务规则集
 - `Netflix.list`、`Facebook.list` 改为本仓库的精简版（域名 + IP-ASN），不再加载上游约 1100 / 570 条规则；这两份不随上游自动更新，条目参考 blackmatrix7/ios_rule_script 手工整理
+- 删除券商服务相关规则（`HK_Broker.list` 与 `📈 券商服务` 策略组）
