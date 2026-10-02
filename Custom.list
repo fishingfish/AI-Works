@@ -1,0 +1,6 @@
+# NAME: Custom
+# DESC: 个人自定义规则（策略：🧩 自定义规则）。尽量把自己的改动写在这里，减少与上游同步的冲突。
+# 示例：
+# DOMAIN-SUFFIX,example.com
+# DOMAIN-KEYWORD,example
+# IP-CIDR,1.2.3.0/24,no-resolve

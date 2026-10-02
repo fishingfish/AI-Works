@@ -12,8 +12,6 @@
 | 🤖 AI 服务 | 🇺🇸 美国节点 | 节点选择、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
 | 🍏 苹果服务 | DIRECT | 节点选择、PROXY |
-| 🏦 汇丰香港 | DIRECT | 🇭🇰 香港节点、节点选择、PROXY |
-| 🏦 香港银行 | DIRECT | 香港节点、节点选择、PROXY |
 | 📈 券商服务 | 🇭🇰 香港节点 | DIRECT、节点选择、PROXY |
 | 🌍 非中国 | PROXY | 节点选择、DIRECT、日本节点 |
 | 🐟 漏网之鱼 | PROXY | 节点选择、DIRECT、日本节点 |
@@ -45,8 +43,6 @@
 | 8 | 📲 电报消息 | 节点选择 |
 | 9 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
 | 10 | Ⓜ️ 微软服务 | 节点选择 |
-| 11 | 🏦 汇丰香港（含 Reward+） | DIRECT |
-| 12 | 🏦 其他香港银行 | DIRECT |
 | 13 | 📈 券商服务（富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透） | 香港节点 |
 | 14 | 🍎 苹果推送 | 节点选择 |
 | 15 | 🍏 苹果服务 | DIRECT |
@@ -62,7 +58,6 @@
 - `Mail.list` 收录 Apple、Gmail、Outlook、Yahoo、Yandex 的邮件协议端点
 - `Apple.list` 基于 blackmatrix7 Apple 规则，并配套加载 `Apple_Domain.list`，补充 iCloud Photos / Apple CDN 直连域名
 - `HK_Broker.list` 补充富途 / moomoo / 长桥 / 老虎 / 雪盈 / 盈透 / TradeUP / Schwab 证券域名及交易 IP 段
-- `HSBC_HK.list` 与 `HK_Banks_Direct.list` 收录香港银行网站及 App 服务域名
 
 ## 当前重点
 
@@ -83,9 +78,6 @@
    - 合并 Arthur-vx Broker 规则中的精确 API / 交易域名、IP 段、TradeUP 和 Schwab 域名
    - 补充雪盈证券 / Snowball X 官方及 OpenAPI 域名
    - 补充盈透证券 / Interactive Brokers 官方域名
-- 新增香港银行分流
-   - 汇丰香港及 Reward+ 默认直连，避免代理出口触发风控或导致 App 反复重试
-   - 其他香港银行默认直连，减少代理 IP 变化带来的风控风险
    - 美国运通因不同地区共用主域名，不纳入自动分流
 - Google AI 相关规则已并入 `Google.list`
 - `🔍 谷歌服务` 默认走日本节点，同时提供香港节点作为手动可选分区，便于在不同网络环境下切换。
@@ -129,3 +121,11 @@
 ## License
 
 MIT
+
+## 我的修改记录
+
+- 加入 blackmatrix7 `AdvertisingLite` 去广告规则（策略组 `🛑 广告拦截`）
+- 规则链接全部指向本仓库；新增 `Custom.list` 与策略组 `🧩 自定义规则`，个人规则写在这里
+- 删除汇丰香港、香港银行相关规则
+- 国内常见域名用阿里 DoH 解析（`[Host]`）
+- 每周自动同步上游（`.github/workflows/sync-upstream.yml`），以 PR 形式合并
