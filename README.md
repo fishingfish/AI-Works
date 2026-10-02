@@ -109,8 +109,6 @@
    - `gateway.push.apple.com`
    - `api.push.apple.com`
    - `sandbox.push.apple.com` 
-- Google 防跳转：`google.cn` / `g.cn` 自动 302 到 `google.com`
-- MITM：仅解密 `*.google.cn`
 
 ## 注意事项
 
@@ -130,3 +128,4 @@ MIT
 - 删除汇丰香港、香港银行相关规则
 - 国内常见域名用阿里 DoH 解析（`[Host]`）
 - 每周自动同步上游（`.github/workflows/sync-upstream.yml`），以 PR 形式合并
+- 删除 `[URL Rewrite]` 与 `[MITM]`（google.cn 跳转及对应的 HTTPS 解密），不再使用 MITM
