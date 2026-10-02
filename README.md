@@ -8,7 +8,7 @@
 |------|----------|----------|
 | 🧱 DNS 防泄露 | REJECT | 节点选择、DIRECT |
 | 📧 邮件服务 | PROXY | DIRECT、节点选择、日本节点、香港节点 |
-| 🔍 谷歌服务 | 🇯🇵 日本节点 | 🇭🇰 香港节点、节点选择、PROXY、DIRECT |
+| 🔍 谷歌服务 | 🇺🇸 美国节点 | 🇯🇵 日本节点、🇭🇰 香港节点、节点选择、PROXY、DIRECT |
 | 🤖 AI 服务 | 🇺🇸 美国节点 | 节点选择、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
 | 🍏 苹果服务 | DIRECT | 节点选择、PROXY |
@@ -35,7 +35,7 @@
 |--------|------|----------|
 | 1 | 🧱 DNS 防泄露（HTTPDNS） | REJECT |
 | 2 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
-| 3 | 🔍 谷歌服务（含 Gemini） | 日本节点，可手动切香港节点 |
+| 3 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
 | 4 | 🤖 AI 服务（ChatGPT、Claude 等） | 美国节点 |
 | 5 | 📹 油管视频（含 YouTube 翻译 API） | 节点选择 |
 | 6 | 🔒 哔哩哔哩 | DIRECT |
