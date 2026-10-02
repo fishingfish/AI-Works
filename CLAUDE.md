@@ -15,7 +15,7 @@
 
 - 配置文件改名为 `Shadowrocket_fish.conf`；上游的 `Shadowrocket.conf` 改动需手动移植到它。`update-url` 与所有自有 `.list` 链接指向 `fishingfish/AI-Works`，不要改回上游。
 - 去广告：`AdvertisingLite`（RULE-SET + DOMAIN-SET），策略组 `🛑 广告拦截`；不使用 MITM 与 URL Rewrite。
-- 策略组：新增 `🧩 自定义规则`、`🎬 流媒体`、`💬 社交平台`、`🇸🇬 新加坡节点`、`🎮 游戏节点`；已删除台湾节点、汇丰、香港银行、券商相关组。
+- 策略组：新增 `🧩 自定义规则`、`🎬 流媒体`、`💬 社交平台`、`🇸🇬 新加坡节点`、`🎮 游戏节点`；Telegram 并入 `💬 社交平台`、YouTube（含翻译 API）并入 `🎬 流媒体`（不再有电报/油管单独策略组）；已删除台湾节点、汇丰、香港银行、券商相关组。
 - 节点筛选：地区组为手动 `select`，过滤名称含 家宽/星链/住宅/5X/游戏 的节点；美国组只过滤“游戏”。`🚀 节点选择` 默认新加坡节点。
 - 谷歌服务默认美国节点。国内 DoH：`[Host]` 中国内域名使用阿里 DoH。
 - 已删除的文件不要恢复：`HSBC_HK.list`、`HK_Banks_Direct.list`、`HK_Broker.list`。上游若更新它们，选择继续删除。

@@ -42,20 +42,18 @@
 | 4 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
 | 5 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
 | 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | 美国节点 |
-| 7 | 📹 油管视频（含 YouTube 翻译 API） | 节点选择 |
-| 8 | 🔒 哔哩哔哩 | DIRECT |
-| 9 | 🏠 私有网络 / 局域网 | DIRECT |
-| 10 | 📲 电报消息 | 节点选择 |
-| 11 | 🎬 流媒体（Netflix、Disney+、HBO、Hulu、Prime Video、Spotify 等） | 节点选择 |
-| 12 | 💬 社交平台（X、Facebook、Instagram、Discord、Reddit、TikTok 等） | 节点选择 |
-| 13 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
-| 14 | Ⓜ️ 微软服务 | 节点选择 |
-| 15 | 🍎 苹果推送 | 节点选择 |
-| 16 | 🍏 苹果服务 | DIRECT |
-| 17 | 🔒 国内服务 | DIRECT |
-| 18 | 🌍 非中国（境外流量） | PROXY |
-| 19 | GEOIP CN | DIRECT |
-| 20 | 🐟 漏网之鱼（兜底） | PROXY |
+| 7 | 🔒 哔哩哔哩 | DIRECT |
+| 8 | 🏠 私有网络 / 局域网 | DIRECT |
+| 9 | 🎬 流媒体（YouTube 含翻译 API、Netflix、Disney+、HBO、Hulu、Prime Video、Spotify 等） | 节点选择 |
+| 10 | 💬 社交平台（Telegram、X、Facebook、Instagram、Discord、Reddit、TikTok 等） | 节点选择 |
+| 11 | 🐱 代码托管（GitHub、GitLab、Atlassian） | 节点选择 |
+| 12 | Ⓜ️ 微软服务 | 节点选择 |
+| 13 | 🍎 苹果推送 | 节点选择 |
+| 14 | 🍏 苹果服务 | DIRECT |
+| 15 | 🔒 国内服务 | DIRECT |
+| 16 | 🌍 非中国（境外流量） | PROXY |
+| 17 | GEOIP CN | DIRECT |
+| 18 | 🐟 漏网之鱼（兜底） | PROXY |
 
 ## 规则集来源
 
@@ -139,3 +137,4 @@ MIT
 - 配置文件改名为 `Shadowrocket_fish.conf`，订阅地址与二维码同步更新
 - 新增策略组 `🎮 游戏节点`（节点名含“游戏”），其余地区组、其他节点组都过滤掉含“游戏”的节点
 - 取消 GitHub Actions 自动同步，改为由 AI 助手按 `CLAUDE.md` 的流程手动同步上游；新增 `scripts/check.py` 校验配置
+- 合并策略组：`📲 电报消息` 并入 `💬 社交平台`，`📹 油管视频` 并入 `🎬 流媒体`
