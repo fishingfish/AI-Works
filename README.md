@@ -138,3 +138,4 @@ MIT
 - 二维码换成本仓库的订阅地址（`qrcode.png`）
 - 配置文件改名为 `Shadowrocket_fish.conf`，订阅地址与二维码同步更新
 - 新增策略组 `🎮 游戏节点`（节点名含“游戏”），其余地区组、其他节点组都过滤掉含“游戏”的节点
+- 取消 GitHub Actions 自动同步，改为由 AI 助手按 `CLAUDE.md` 的流程手动同步上游；新增 `scripts/check.py` 校验配置
