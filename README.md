@@ -10,8 +10,8 @@
 | 🛑 广告拦截 | REJECT | DIRECT、节点选择 |
 | 🧩 自定义规则 | 🚀 节点选择 | PROXY、DIRECT、REJECT |
 | 📧 邮件服务 | PROXY | DIRECT、节点选择、日本节点、香港节点 |
-| 🔍 谷歌服务 | 🇺🇸 美国节点 | 🇯🇵 日本节点、🇭🇰 香港节点、节点选择、PROXY、DIRECT |
-| 🤖 AI 服务 | 🇺🇸 美国节点 | 节点选择、PROXY、DIRECT |
+| 🔍 谷歌服务 | 🚀 节点选择 | 🇺🇸 美国节点、🇯🇵 日本节点、🇭🇰 香港节点、PROXY、DIRECT |
+| 🤖 AI 服务 | 美国家宽 / 星链节点（按节点名筛选） | 无，仅此类节点 |
 | 🎬 流媒体 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 💬 社交平台 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
@@ -40,8 +40,8 @@
 | 2 | 🧩 自定义规则（`Custom.list`） | 节点选择 |
 | 3 | 🛑 广告拦截（AdvertisingLite） | REJECT |
 | 4 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
-| 5 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
-| 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | 美国节点 |
+| 5 | 🔍 谷歌服务（含 Gemini） | 节点选择，可手动切美国、日本、香港节点 |
+| 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | 美国家宽 / 星链节点 |
 | 7 | 🔒 哔哩哔哩 | DIRECT |
 | 8 | 🏠 私有网络 / 局域网 | DIRECT |
 | 9 | 🎬 流媒体（YouTube 含翻译 API、Netflix、Disney+、HBO、Hulu、Prime Video、Spotify 等） | 节点选择 |
@@ -139,3 +139,4 @@ MIT
 - 取消 GitHub Actions 自动同步，改为由 AI 助手按 `CLAUDE.md` 的流程手动同步上游；新增 `scripts/check.py` 校验配置
 - 合并策略组：`📲 电报消息` 并入 `💬 社交平台`，`📹 油管视频` 并入 `🎬 流媒体`
 - 新增 `AGENTS.md`，指向 `CLAUDE.md`，让其他 AI 编程助手也能按同一流程维护
+- 谷歌服务默认跟随 `🚀 节点选择`；美国节点组同样过滤 家宽/星链/住宅/5X/游戏 节点；`🤖 AI 服务` 改为只包含名称含“家宽”或“星链”的美国节点（并排除“游戏”）
