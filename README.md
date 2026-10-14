@@ -11,7 +11,7 @@
 | 🧩 自定义规则 | 🚀 节点选择 | PROXY、DIRECT、REJECT |
 | 📧 邮件服务 | PROXY | DIRECT、节点选择、日本节点、香港节点 |
 | 🔍 谷歌服务 | 🇺🇸 美国节点 | 🇯🇵 日本节点、🇭🇰 香港节点、节点选择、PROXY、DIRECT |
-| 🤖 AI 服务 | 🤖 AI 家宽节点（组内默认 🇺🇸 美国-家宽 02丨5x US） | 🇺🇸 美国节点、🇸🇬 新加坡节点 |
+| 🤖 AI 服务 | 🇺🇸 美国节点 | 🇸🇬 新加坡节点、🤖 AI 家宽节点（美国家宽 / 星链，组内默认 🇺🇸 美国-家宽 02丨5x US） |
 | 🎬 流媒体 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 💬 社交平台 | 🚀 节点选择 | 新加坡/香港/日本/美国节点、PROXY、DIRECT |
 | 🍎 苹果推送 | 🚀 节点选择 | PROXY、DIRECT |
@@ -41,7 +41,7 @@
 | 3 | 🛑 广告拦截（AdvertisingLite） | REJECT |
 | 4 | 📧 邮件服务（IMAP / POP3 / SMTP） | PROXY，可切换 DIRECT 或地区节点 |
 | 5 | 🔍 谷歌服务（含 Gemini） | 美国节点，可手动切日本、香港节点 |
-| 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | AI 家宽节点（美国家宽 / 星链） |
+| 6 | 🤖 AI 服务（ChatGPT、Claude、Cursor 等） | 美国节点，可切新加坡或 AI 家宽节点 |
 | 7 | 🔒 哔哩哔哩 | DIRECT |
 | 8 | 🏠 私有网络 / 局域网 | DIRECT |
 | 9 | 🎬 流媒体（YouTube 含翻译 API、Netflix、Disney+、HBO、Hulu、Prime Video、Spotify 等） | 节点选择 |
@@ -145,3 +145,4 @@ MIT
 - `🇺🇸 美国节点` 默认选中 `🇺🇸 美国-洛杉矶 02丨1X US`
 - `🤖 AI 服务` 新增 `🇺🇸 美国节点`、`🇸🇬 新加坡节点` 两个组作为备选
 - `🤖 AI 服务` 改为两层：外层可选 `🤖 AI 家宽节点`（美国家宽/星链节点）、美国节点、新加坡节点
+- `🤖 AI 服务` 默认改为 `🇺🇸 美国节点`
